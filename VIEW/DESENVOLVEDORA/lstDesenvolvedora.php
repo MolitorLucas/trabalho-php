@@ -21,7 +21,7 @@ $lstDesenvolvedora = $bll->select();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <title>Listar desenvolvedoraes</title>
 </head>
 
@@ -49,9 +49,9 @@ $lstDesenvolvedora = $bll->select();
                         <td class="text-center font-monospace"><?php echo $desenvolvedora->getOrigem(); ?></td>
                         <td class="text-center font-monospace"><?php echo ($desenvolvedora->isIndie() ? 'SIM' : 'NÃO'); ?></td>
                         <td class="text-center font-monospace">
-                            <button class="btn btn-sm btn-info">i</button>
-                            <button class="btn btn-sm btn-primary">E</button>
-                            <button class="btn btn-sm btn-danger">D</button>
+                            <button class="btn btn-sm btn-info"><iconify-icon icon="memory:diamond"></iconify-icon></button>
+                            <button class="btn btn-sm btn-primary"><iconify-icon icon="memory:pickaxe"></iconify-icon></button>
+                            <button class="btn btn-sm btn-danger"><iconify-icon icon="memory:skull"></iconify-icon></button>
                         </td>
                     </tr>
                 <?php
