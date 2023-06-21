@@ -6,7 +6,7 @@
     include_once 'conexao.php';
     include_once 'C:\xampp\htdocs\trabalho-php\MODEL\genero.php';
 
-    class Dalgenero {
+    class DalGenero {
         public function select(){
 
             $con = Conexao::open();
@@ -50,7 +50,7 @@
 
         public function update(\MODEL\Genero $genero){
             $con = Conexao::open(); 
-            $sql = "UPDATE genero SET descricao = ?, origem = ?, indie = ? WHERE id = ?";
+            $sql = "UPDATE genero SET descricao = ? WHERE id = ?";
      
             $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             $query = $con->prepare($sql);

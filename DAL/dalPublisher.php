@@ -6,7 +6,7 @@
     include_once 'conexao.php';
     include_once 'C:\xampp\htdocs\trabalho-php\MODEL\publisher.php';
 
-    class Dalpublisher {
+    class DalPublisher {
         public function select(){
 
             $con = Conexao::open();
@@ -50,7 +50,7 @@
 
         public function update(\MODEL\Publisher $publisher){
             $con = Conexao::open(); 
-            $sql = "UPDATE publisher SET nome = ?, origem = ?, indie = ? WHERE id = ?";
+            $sql = "UPDATE publisher SET nome = ? WHERE id = ?";
      
             $con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             $query = $con->prepare($sql);

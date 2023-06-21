@@ -1,7 +1,7 @@
 <?php 
     namespace BLL;
 
-    use DAL\DalDesenvolvedora;
+    use \DAL\DalDesenvolvedora;
 
     include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalDesenvolvedora.php';
 

@@ -1,7 +1,7 @@
 <?php 
     namespace BLL;
 
-    use DAL\DalGenero;
+    use \DAL\DalGenero;
 
     include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalGenero.php';
 

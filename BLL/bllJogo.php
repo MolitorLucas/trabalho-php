@@ -1,21 +1,21 @@
 <?php 
     namespace BLL;
 
-    use \DAL\DalPublisher;
+    use \DAL\DalJogo;
 
-    include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalPublisher.php';
+    include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalJogo.php';
 
-    class BllPublisher {
-        private DalPublisher $dal;
+    class BllJogo {
+        private DalJogo $dal;
 
         public function __construct(){
-            $this->dal = new DalPublisher();
+            $this->dal = new DalJogo();
         }
         public function select(){
 
             try {
-                $publishers = $this->dal->select();
-                return $publishers;
+                $jogos = $this->dal->select();
+                return $jogos;
             }
             catch(\Exception $e) {
                 echo($e->getMessage());
@@ -25,18 +25,18 @@
         public function selectId(int $id)
         {
             try {
-                $publisher = $this->dal->selectID($id);
-                return $publisher;
+                $jogo = $this->dal->selectID($id);
+                return $jogo;
             }
             catch(\Exception $e){
                 echo($e->getMessage());
             }
         }
 
-        public function insert(\MODEL\Publisher $publisher){
-            if($publisher->getNome() != ""){
+        public function insert(\MODEL\Jogo $jogo){
+            if($jogo->getNome() != ""){
                 try {
-                    $this->dal->insert($publisher);
+                    $this->dal->insert($jogo);
                 } catch (\Exception $e) {
                     echo ($e->getMessage());
                 }
@@ -51,4 +51,3 @@
             }
         }
     }
-?>
