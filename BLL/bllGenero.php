@@ -1,21 +1,21 @@
 <?php 
     namespace BLL;
 
-    use DAL\DalPublisher;
+    use DAL\DalGenero;
 
-    include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalPublisher.php';
+    include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalGenero.php';
 
-    class BllPublisher {
-        private DalPublisher $dal;
+    class BllGenero {
+        private DalGenero $dal;
 
         public function __construct(){
-            $this->dal = new DalPublisher();
+            $this->dal = new DalGenero();
         }
         public function select(){
 
             try {
-                $publishers = $this->dal->select();
-                return $publishers;
+                $generos = $this->dal->select();
+                return $generos;
             }
             catch(\Exception $e) {
                 echo($e->getMessage());
@@ -25,18 +25,18 @@
         public function selectId(int $id)
         {
             try {
-                $publisher = $this->dal->selectID($id);
-                return $publisher;
+                $genero = $this->dal->selectID($id);
+                return $genero;
             }
             catch(\Exception $e){
                 echo($e->getMessage());
             }
         }
 
-        public function insert(\MODEL\Publisher $publisher){
-            if($publisher->getNome() != ""){
+        public function insert(\MODEL\Genero $genero){
+            if($genero->getDescricao() != ""){
                 try {
-                    $this->dal->insert($publisher);
+                    $this->dal->insert($genero);
                 } catch (\Exception $e) {
                     echo ($e->getMessage());
                 }
@@ -51,4 +51,3 @@
             }
         }
     }
-?>
