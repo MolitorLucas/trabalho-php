@@ -1,0 +1,24 @@
+.containerDev {
+    background-color: black;
+    padding: 20rem;
+    
+}
+
+.input{
+    padding: 15px !important; 
+    width: 60% !important;
+    height: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.containerDev .textoInput {
+   text-align: center;
+   color: white;
+   font-weight: 400;
+}
+
+.check {
+    font-weight: 700;
+    color: white;
+}

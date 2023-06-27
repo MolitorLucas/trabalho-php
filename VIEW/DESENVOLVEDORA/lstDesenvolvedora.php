@@ -1,8 +1,6 @@
 <?php
 echo __DIR__;
 
-include 'C:\xampp\htdocs\trabalho-php\DAL\conexao.php';
-
 use BLL\BllDesenvolvedora;
 
 include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllDesenvolvedora.php';
@@ -22,7 +20,7 @@ $lstDesenvolvedora = $bll->select();
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <title>Listar desenvolvedoraes</title>
+    <title>Listar desenvolvedoras</title>
 </head>
 
 <body>
