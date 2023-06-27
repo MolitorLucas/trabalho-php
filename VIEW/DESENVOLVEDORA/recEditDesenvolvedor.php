@@ -7,7 +7,11 @@
    $desenvolvedora->setId($_POST['idInput']);
    $desenvolvedora->setNome($_POST['nomeInput']);
    $desenvolvedora->setOrigem($_POST['origemInput']);
-   $desenvolvedora->setIndie($_POST['indieCheckBox']); 
+
+   if ($_POST['indieCheckBox'] != NULL){
+   $desenvolvedora->setIndie($_POST['indieCheckBox']);
+    } 
+   else {$desenvolvedora->setIndie(false);}
 
    $bll = new \BLL\bllDesenvolvedora(); 
    $bll->Update($desenvolvedora); 

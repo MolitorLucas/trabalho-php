@@ -62,7 +62,8 @@
             $query = $con->prepare($sql);
             $result = $query->execute(array($desenvolvedora->getNome(),
                                              $desenvolvedora->getOrigem(),
-                                            $desenvolvedora->isIndie()
+                                            $desenvolvedora->isIndie(),
+                                            $desenvolvedora->getId()
                                             )
                                         ); 
             $con = Conexao::close();
