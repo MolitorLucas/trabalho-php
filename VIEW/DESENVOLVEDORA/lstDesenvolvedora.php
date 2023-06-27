@@ -48,7 +48,8 @@ $lstDesenvolvedora = $bll->select();
                         <td class="text-center font-monospace"><?php echo ($desenvolvedora->isIndie() ? 'SIM' : 'NÃO'); ?></td>
                         <td class="text-center font-monospace">
                             <button class="btn btn-sm btn-info"><iconify-icon icon="memory:diamond"></iconify-icon></button>
-                            <button class="btn btn-sm btn-primary"><iconify-icon icon="memory:pickaxe"></iconify-icon></button>
+                            <button class="btn btn-sm btn-primary"><iconify-icon icon="memory:pickaxe" onclick="JavaScript:location.href='editDesenvolvedora.php?id=' +
+                                     <?php echo $desenvolvedora->getId(); ?>"></iconify-icon></button>
                             <button class="btn btn-sm btn-danger"><iconify-icon icon="memory:skull"></iconify-icon></button>
                         </td>
                     </tr>

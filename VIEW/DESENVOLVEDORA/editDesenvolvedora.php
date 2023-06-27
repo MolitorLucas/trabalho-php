@@ -5,9 +5,6 @@ $id = $_GET['id'];
 $bll = new  \BLL\bllDesenvolvedora();
 $desenvolvedora = $bll->selectId($id);
 
-echo $desenvolvedora->getNome();
-
-
 ?>
 
 
@@ -19,12 +16,11 @@ echo $desenvolvedora->getNome();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create</title>
 
-    <link href="../css/desenvolvedora.css" rel="stylesheet">
+    <link href="../css/insert.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-
+    
 </head>
 
 <body>
@@ -32,25 +28,24 @@ echo $desenvolvedora->getNome();
 
 <div class="pagina">
     <div class="containerGeral">
-                <div class="titulo">
-                    <h1>EDITAR</h1>
-                </div>
+            <div class="titulo">
+                    <h1>EDITAR: ID <?php echo $desenvolvedora->getId(); ?></h1>
+            </div>
                 <div class='containerDev'>
-                    <form method="POST" action="recinsDesenvolvedor.php" id="formInsere">
+                    <form method="POST" action="recEditDesenvolvedor.php" id="formInsere">
                     <div class="mb-3">
-                        <label for="idInput" class="textoInput form-label">Nome Da Desenvolvedora</label>
-                        <input type="id" class="input form-control" id="idInput" name="idInput">
+                        <input type="hidden" class="input form-control" id="idInput" name="idInput" value="<?php echo $id; ?>">
                     </div>
                     <div class="mb-3">
-                        <label for="nomeInput" class="textoInput form-label">Nome Da Desenvolvedora</label>
-                        <input type="nome" class="input form-control" id="nomeInput" name="nomeInput">
+                        <label for="nomeInput" class="textoInput form-label">Nome Da Desenvolvedora:</label>
+                        <input type="text" class="input form-control" id="nomeInput" name="nomeInput" value="<?php echo $desenvolvedora->getNome() ?>">
                     </div>
                     <div class="mb-3">
                         <label for="origemInput" class="textoInput form-label">País de Origem</label>
-                        <input type="origem" class="input form-control" id="origemInput" name="origemInput">
+                        <input type="text" class="input form-control" id="origemInput" name="origemInput" value="<?php echo $desenvolvedora->getOrigem() ?>" >
                     </div>
                     <div class="form-check mb-3 ml-3 form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="indieCheckBox" name="indieCheckBox">
+                    <input class="form-check-input" type="checkbox" role="switch" id="indieCheckBox" name="indieCheckBox" <?php if($desenvolvedora->isIndie()){ echo 'checked'; } ?>>
                     <label class="check form-check-label" for="indieCheckBox">Sua desenvolvedora é Indie?</label>
                     </div>
 
@@ -61,14 +56,10 @@ echo $desenvolvedora->getNome();
                         <button type="reset" class="botaoRejeitar btn btn-primary">
                             <iconify-icon icon="memory:remove-circle" style="color: black;" width="30" height="30"></iconify-icon>
                         </button>
+                    
                     </form>
                 </div>
     </div>
-
-    
-        
-    
-
 </div>
 
 <?php include_once '../footer.php';?>
