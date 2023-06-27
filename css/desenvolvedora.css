@@ -23,10 +23,11 @@
 
 .lacottickBy{
     color: white;
+    height: 100%;
     border-left: 15px solid rgba(0, 0, 0, 0);
     border-right: 15px solid rgba(0, 0, 0, 0);
     border-bottom: 20px solid black;
-    text-justify:auto;
+    text-justify: auto;
     text-align: center;
 }
 
@@ -35,6 +36,7 @@
     text-justify: center;
     color:#f2f68d;
     font-weight: 700;
+    height: 100%;
 }
 
 .tituloTop:hover {

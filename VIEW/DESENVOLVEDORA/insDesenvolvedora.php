@@ -49,11 +49,11 @@
                 <div class='containerDev'>
                     <form>
                     <div class="mb-3">
-                        <label for="nomeInput" class="textoInput form-label">Nome</label>
+                        <label for="nomeInput" class="textoInput form-label">Nome Da Desenvolvedora</label>
                         <input type="nome" class="input form-control" id="nomeInput" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
-                        <label for="oritemInput" class="textoInput form-label">Origem</label>
+                        <label for="oritemInput" class="textoInput form-label">País de Origem</label>
                         <input type="origem" class="input form-control" id="oritemImput">
                     </div>
                     <div class="form-check mb-3 ml-3 form-switch">
@@ -88,7 +88,8 @@
         de indenizações financeiras e ações judiciais, se necessário. Agradecemos sua compreensão e respeito pelos direitos autorais 
         e propriedade intelectual da Lacottick.
         </p>   
-        <p class="lacottickBy">By <a class="tituloTop" href="https://www.linkedin.com/in/nicolasppenga/">Nicolas Petruci</a> & <a class="tituloTop" href="https://www.linkedin.com/in/lucas-molitor-1b1931230/">Lucas Roberto</a></p>
+        <p class="lacottickBy">By <a class="tituloTop" href="https://www.linkedin.com/in/nicolasppenga/">Nicolas Petruci</a> & <a class="tituloTop" href="https://www.linkedin.com/in/lucas-molitor-1b1931230/">Lucas Roberto</a><br><br></p>
+    
     </div>
 </div>
 </body>
