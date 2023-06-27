@@ -47,18 +47,18 @@
                     <h1>INSERIR</h1>
                 </div>
                 <div class='containerDev'>
-                    <form>
+                    <form method="POST" action="recinsDesenvolvedor.php" id="formInsere">
                     <div class="mb-3">
                         <label for="nomeInput" class="textoInput form-label">Nome Da Desenvolvedora</label>
-                        <input type="nome" class="input form-control" id="nomeInput" aria-describedby="emailHelp">
+                        <input type="nome" class="input form-control" id="nomeInput" name="nomeInput">
                     </div>
                     <div class="mb-3">
-                        <label for="oritemInput" class="textoInput form-label">País de Origem</label>
-                        <input type="origem" class="input form-control" id="oritemImput">
+                        <label for="origemInput" class="textoInput form-label">País de Origem</label>
+                        <input type="origem" class="input form-control" id="origemInput" name="origemInput">
                     </div>
                     <div class="form-check mb-3 ml-3 form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="check form-check-label" for="flexSwitchCheckDefault">Sua desenvolvedora é Indie?</label>
+                    <input class="form-check-input" type="checkbox" role="switch" id="indieCheckBox" name="indieCheckBox">
+                    <label class="check form-check-label" for="indieCheckBox">Sua desenvolvedora é Indie?</label>
                     </div>
 
                     <div class="posBotoes">
