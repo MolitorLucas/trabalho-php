@@ -20,19 +20,19 @@ $desenvolvedora = $bll->selectId($id);
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    
+
 </head>
 
 <body>
-<?php include_once '../navbar.php';?>
+    <?php include_once '../navbar.php'; ?>
 
-<div class="pagina">
-    <div class="containerGeral">
+    <div class="pagina">
+        <div class="containerGeral">
             <div class="titulo">
-                    <h1>EDITAR: ID <?php echo $desenvolvedora->getId(); ?></h1>
+                <h1>EDITAR: ID <?php echo $desenvolvedora->getId(); ?></h1>
             </div>
-                <div class='containerDev'>
-                    <form method="POST" action="recEditDesenvolvedor.php" id="formInsere">
+            <div class='containerDev'>
+                <form method="POST" action="recEditDesenvolvedor.php" id="formInsere">
                     <div class="mb-3">
                         <input type="hidden" class="input form-control" id="idInput" name="idInput" value="<?php echo $id; ?>">
                     </div>
@@ -42,11 +42,13 @@ $desenvolvedora = $bll->selectId($id);
                     </div>
                     <div class="mb-3">
                         <label for="origemInput" class="textoInput form-label">País de Origem</label>
-                        <input type="text" class="input form-control" id="origemInput" name="origemInput" value="<?php echo $desenvolvedora->getOrigem() ?>" >
+                        <input type="text" class="input form-control" id="origemInput" name="origemInput" value="<?php echo $desenvolvedora->getOrigem() ?>">
                     </div>
                     <div class="form-check mb-3 ml-3 form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="indieCheckBox" name="indieCheckBox" <?php if($desenvolvedora->isIndie()){ echo 'checked'; } ?>>
-                    <label class="check form-check-label" for="indieCheckBox">Sua desenvolvedora é Indie?</label>
+                        <input class="form-check-input" type="checkbox" role="switch" id="indieCheckBox" name="indieCheckBox" <?php if ($desenvolvedora->isIndie()) {
+                                                                                                                                    echo 'checked';
+                                                                                                                                } ?>>
+                        <label class="check form-check-label" for="indieCheckBox">Sua desenvolvedora é Indie?</label>
                     </div>
 
                     <div class="posBotoes">
@@ -56,15 +58,16 @@ $desenvolvedora = $bll->selectId($id);
                         <button type="reset" class="botaoRejeitar btn btn-primary">
                             <iconify-icon icon="memory:remove-circle" style="color: black;" width="30" height="30"></iconify-icon>
                         </button>
-                    
-                    </form>
-                </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
 
-<?php include_once '../footer.php';?>
-</div>
+    <?php include_once '../footer.php'; ?>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
+
 </html>
