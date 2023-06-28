@@ -4,9 +4,10 @@ include_once '../../BLL/bllPublisher.php';
 
 $publisher = new \MODEL\Publisher();
 
+$publisher->setId($_POST['idInput']);
 $publisher->setNome($_POST['nomeInput']);
 
 $bll = new \BLL\BllPublisher();
-$bll->insert($publisher);
+$bll->Update($publisher);
 
 header("location: lstPublisher.php");

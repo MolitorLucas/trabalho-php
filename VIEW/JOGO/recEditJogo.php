@@ -7,6 +7,7 @@ include_once '../../BLL/bllPublisher.php';
 
 $jogo = new \MODEL\Jogo();
 
+$jogo->setId($_POST['idInput']);
 $jogo->setNome($_POST['nomeInput']);
 $jogo->setPreco($_POST['precoInput']);
 
@@ -24,6 +25,6 @@ $jogo->setPublisher($pubSelecionada);
 
 
 $bll = new \BLL\BllJogo();
-$bll->insert($jogo);
+$bll->update($jogo);
 
 header("location: lstjogo.php");

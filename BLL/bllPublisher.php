@@ -1,55 +1,59 @@
-<?php 
-    namespace BLL;
+<?php
 
-    use \DAL\DalPublisher;
+namespace BLL;
 
-    include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalPublisher.php';
+use \DAL\DalPublisher;
 
-    class BllPublisher {
-        private DalPublisher $dal;
+include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalPublisher.php';
 
-        public function __construct(){
-            $this->dal = new DalPublisher();
+class BllPublisher
+{
+    private DalPublisher $dal;
+
+    public function __construct()
+    {
+        $this->dal = new DalPublisher();
+    }
+    public function select()
+    {
+
+        try {
+            $publishers = $this->dal->select();
+            return $publishers;
+        } catch (\Exception $e) {
+            echo ($e->getMessage());
         }
-        public function select(){
+    }
 
+    public function selectId(int $id)
+    {
+        try {
+            $publisher = $this->dal->selectID($id);
+            return $publisher;
+        } catch (\Exception $e) {
+            echo ($e->getMessage());
+        }
+    }
+
+    public function insert(\MODEL\Publisher $publisher)
+    {
+        if ($publisher->getNome() != "") {
             try {
-                $publishers = $this->dal->select();
-                return $publishers;
-            }
-            catch(\Exception $e) {
-                echo($e->getMessage());
-            }
-        }
-
-        public function selectId(int $id)
-        {
-            try {
-                $publisher = $this->dal->selectID($id);
-                return $publisher;
-            }
-            catch(\Exception $e){
-                echo($e->getMessage());
-            }
-        }
-
-        public function insert(\MODEL\Publisher $publisher){
-            if($publisher->getNome() != ""){
-                try {
-                    $this->dal->insert($publisher);
-                } catch (\Exception $e) {
-                    echo ($e->getMessage());
-                }
-            }
-        }
-
-        public function delete(int $id){
-            try{
-                $this->dal->delete($id);
+                $this->dal->insert($publisher);
             } catch (\Exception $e) {
                 echo ($e->getMessage());
             }
         }
+    }
+
+    public function delete(int $id)
+    {
+        try {
+            $this->dal->delete($id);
+        } catch (\Exception $e) {
+            echo ($e->getMessage());
+        }
+    }
 
 
     public function update(\MODEL\Publisher $publisher)
@@ -62,4 +66,4 @@
             }
         }
     }
-    }
+}
