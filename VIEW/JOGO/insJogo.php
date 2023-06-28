@@ -53,7 +53,7 @@ $lstPublishers = $bll->select();
                     </div>
                     <div class="mb-3">
                         <label for="precoInput" class="textoInput form-label">Preço</label>
-                        <input type="number" class="input form-control" id="precoInput" name="precoInput">
+                        <input type="text" class="input form-control" id="precoInput" name="precoInput">
                     </div>
                     <div class="mb-3">
                         <label for="desenvolvedoraSelect" class="textoInput form-label">Desenvolvedora</label>

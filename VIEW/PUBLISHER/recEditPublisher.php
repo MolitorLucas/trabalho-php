@@ -8,6 +8,6 @@ $publisher->setId($_POST['idInput']);
 $publisher->setNome($_POST['nomeInput']);
 
 $bll = new \BLL\BllPublisher();
-$bll->Update($publisher);
+$bll->update($publisher);
 
 header("location: lstPublisher.php");

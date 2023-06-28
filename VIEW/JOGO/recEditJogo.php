@@ -27,4 +27,4 @@ $jogo->setPublisher($pubSelecionada);
 $bll = new \BLL\BllJogo();
 $bll->update($jogo);
 
-header("location: lstjogo.php");
+header("location: lstJogo.php");
