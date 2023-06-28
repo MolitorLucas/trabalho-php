@@ -50,8 +50,7 @@ $lstDesenvolvedora = $bll->select();
                                      <?php echo $desenvolvedora->getId(); ?>"><iconify-icon icon="memory:diamond"></iconify-icon></button>
                             <button class="btn btn-sm btn-primary" onclick="JavaScript:location.href='editDesenvolvedora.php?id=' +
                                      <?php echo $desenvolvedora->getId(); ?>"><iconify-icon icon="memory:pickaxe" ></iconify-icon></button>
-                            <button class="btn btn-sm btn-danger" onclick="JavaScript:remover(<?php echo $desenvolvedora->getId(); ?>)
-                                     "><iconify-icon icon="memory:skull"></iconify-icon></button>
+                            <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#modalExcluir"><iconify-icon icon="memory:skull"></iconify-icon></button>
                         </td>
                     </tr>
                 <?php
@@ -68,6 +67,26 @@ $lstDesenvolvedora = $bll->select();
         }
     }
     </script>
+
+    <div class="modal fade" id="modalExcluir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalExcluirLabel">EXCLUSÃO</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Deseja realmente excluir?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não!</button>
+            <button type="button" class="btn btn-success" onclick="JavaScript:location.href='delDesenvolvedora.php?id=' +
+                                     <?php echo $desenvolvedora->getId(); ?>">Sim!</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
