@@ -1,6 +1,6 @@
 <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
             <link href=""><img src="../img/logoFinal.png"></link>
         </a>
     </div>
