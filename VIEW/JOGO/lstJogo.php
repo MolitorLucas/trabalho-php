@@ -1,11 +1,11 @@
 <?php
 
-use BLL\BllDesenvolvedora;
+use BLL\bllJogo;
 
-include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllDesenvolvedora.php';
+include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllJogo.php';
 
-$bll = new BllDesenvolvedora();
-$lstDesenvolvedora = $bll->select();
+$bll = new \BLL\bllJogo();
+$lstJogo = $bll->select();
 ?>
 
 
@@ -21,7 +21,7 @@ $lstDesenvolvedora = $bll->select();
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <title>Listar desenvolvedoras</title>
+    <title>Listar Jogos</title>
 
     <style>
         .containerDev {
@@ -57,34 +57,38 @@ $lstDesenvolvedora = $bll->select();
 
             <div class='containerDev'>
 
-                <button class='botao btn btn-sm btn-primary' onclick="JavaScript:location.href='insDesenvolvedora.php'">Inserir Desenvolvedora</button>
+                <button class='botao btn btn-sm btn-primary' onclick="JavaScript:location.href='insJogo.php'">Inserir Jogo</button>
 
-                <p class="h1 py-2 bg-warning font-monospace text-center">Listar Desenvolvedoras</p>
+                <p class="h1 py-2 bg-warning font-monospace text-center">Listar Jogos</p>
                 <table class="table table-dark table-stripped table-hover">
                     <thead>
                         <tr>
                             <th class="text-center font-monospace">ID</th>
                             <th class="text-center font-monospace">NOME</th>
-                            <th class="text-center font-monospace">ORIGEM</th>
-                            <th class="text-center font-monospace">INDIE</th>
+                            <th class="text-center font-monospace">PREÇO</th>
+                            <th class="text-center font-monospace">DESENVOLVEDORA</th>
+                            <th class="text-center font-monospace">PUBLISHER</th>
+                            <th class="text-center font-monospace">GENERO</th>
                             <th class="text-center font-monospace">AÇÕES</th>
                         </tr>
 
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($lstDesenvolvedora as $desenvolvedora) {
+                        foreach ($lstJogo as $jogo) {
                         ?>
                             <tr>
-                                <td class="text-center font-monospace"><?php echo $desenvolvedora->getId(); ?></td>
-                                <td class="text-center font-monospace"><?php echo $desenvolvedora->getNome(); ?></td>
-                                <td class="text-center font-monospace"><?php echo $desenvolvedora->getOrigem(); ?></td>
-                                <td class="text-center font-monospace"><?php echo ($desenvolvedora->isIndie() ? 'SIM' : 'NÃO'); ?></td>
+                                <td class="text-center font-monospace"><?php echo $jogo->getId(); ?></td>
+                                <td class="text-center font-monospace"><?php echo $jogo->getNome(); ?></td>
+                                <td class="text-center font-monospace"><?php echo $jogo->getPreco(); ?></td>
+                                <td class="text-center font-monospace"><?php echo $jogo->getDesenvolvedora()->getNome(); ?></td>
+                                <td class="text-center font-monospace"><?php echo $jogo->getPublisher()->getNome(); ?></td>
+                                <td class="text-center font-monospace"><?php echo $jogo->getGenero()->getDescricao(); ?></td>
                                 <td class="text-center font-monospace">
-                                    <button class="btn btn-sm btn-info" onclick="JavaScript:location.href='detDesenvolvedora.php?id=' +
-                                     <?php echo $desenvolvedora->getId(); ?>"><iconify-icon icon="memory:diamond"></iconify-icon></button>
-                                    <button class="btn btn-sm btn-primary" onclick="JavaScript:location.href='editDesenvolvedora.php?id=' +
-                                     <?php echo $desenvolvedora->getId(); ?>"><iconify-icon icon="memory:pickaxe"></iconify-icon></button>
+                                    <button class="btn btn-sm btn-info" onclick="JavaScript:location.href='detJogo.php?id=' +
+                                     <?php echo $jogo->getId(); ?>"><iconify-icon icon="memory:diamond"></iconify-icon></button>
+                                    <button class="btn btn-sm btn-primary" onclick="JavaScript:location.href='editJogo.php?id=' +
+                                     <?php echo $jogo->getId(); ?>"><iconify-icon icon="memory:pickaxe"></iconify-icon></button>
                                     <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#modalExcluir"><iconify-icon icon="memory:skull"></iconify-icon></button>
                                 </td>
                             </tr>
@@ -109,8 +113,8 @@ $lstDesenvolvedora = $bll->select();
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não!</button>
-                        <button type="button" class="btn btn-success" onclick="JavaScript:location.href='delDesenvolvedora.php?id=' +
-                                     <?php echo $desenvolvedora->getId(); ?>">Sim!</button>
+                        <button type="button" class="btn btn-success" onclick="JavaScript:location.href='delJogo.php?id=' +
+                                     <?php echo $jogo->getId(); ?>">Sim!</button>
                     </div>
                 </div>
             </div>
