@@ -1,53 +1,69 @@
-<?php 
-    namespace BLL;
+<?php
 
-    use \DAL\DalGenero;
+namespace BLL;
 
-    include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalGenero.php';
+use \DAL\DalGenero;
 
-    class BllGenero {
-        private DalGenero $dal;
+include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalGenero.php';
 
-        public function __construct(){
-            $this->dal = new DalGenero();
+class BllGenero
+{
+    private DalGenero $dal;
+
+    public function __construct()
+    {
+        $this->dal = new DalGenero();
+    }
+    public function select()
+    {
+
+        try {
+            $generos = $this->dal->select();
+            return $generos;
+        } catch (\Exception $e) {
+            echo ($e->getMessage());
         }
-        public function select(){
+    }
 
+    public function selectId(int $id)
+    {
+        try {
+            $genero = $this->dal->selectID($id);
+            return $genero;
+        } catch (\Exception $e) {
+            echo ($e->getMessage());
+        }
+    }
+
+    public function insert(\MODEL\Genero $genero)
+    {
+        if ($genero->getDescricao() != "") {
             try {
-                $generos = $this->dal->select();
-                return $generos;
-            }
-            catch(\Exception $e) {
-                echo($e->getMessage());
-            }
-        }
-
-        public function selectId(int $id)
-        {
-            try {
-                $genero = $this->dal->selectID($id);
-                return $genero;
-            }
-            catch(\Exception $e){
-                echo($e->getMessage());
-            }
-        }
-
-        public function insert(\MODEL\Genero $genero){
-            if($genero->getDescricao() != ""){
-                try {
-                    $this->dal->insert($genero);
-                } catch (\Exception $e) {
-                    echo ($e->getMessage());
-                }
-            }
-        }
-
-        public function delete(int $id){
-            try{
-                $this->dal->delete($id);
+                $this->dal->insert($genero);
             } catch (\Exception $e) {
                 echo ($e->getMessage());
             }
         }
     }
+
+    public function delete(int $id)
+    {
+        try {
+            $this->dal->delete($id);
+        } catch (\Exception $e) {
+            echo ($e->getMessage());
+        }
+    }
+
+
+    public function update(\MODEL\Genero $genero)
+    {
+        if ($genero->getDescricao() != "") {
+            try {
+                $this->dal->update($genero);
+            } catch (\Exception $e) {
+                echo ($e->getMessage());
+            }
+        }
+    }
+}

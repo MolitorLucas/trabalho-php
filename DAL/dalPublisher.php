@@ -14,15 +14,16 @@
             
             $lstReader = $con->query($sql);
             $con = Conexao::close();
+            $lstPublisher = [];
             foreach($lstReader as $reader){
                 $publisher = new \MODEL\Publisher();
 
                 $publisher->setId($reader['id']);
                 $publisher->setNome($reader['nome']);
-                $lstDesenvovedora[] = $publisher;
+                $lstPublisher[] = $publisher;
             }
 
-            return $lstDesenvovedora;
+            return $lstPublisher;
         }
 
         public function selectID(int $id){
@@ -72,4 +73,3 @@
             return $result;
         }
     }
-?>

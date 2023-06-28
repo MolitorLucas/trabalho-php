@@ -4,7 +4,7 @@
     background-color: rgba(137, 43, 226, 0.5);
 }
 
-.footer{
+.footer {
     background-color: #212529;
     height: 100%;
     width: 100%;
@@ -17,11 +17,11 @@
     padding: 20px;
     color: white;
     width: 100%;
-    text-justify:auto;
+    text-justify: auto;
     text-align: center;
 }
 
-.lacottickBy{
+.lacottickBy {
     color: white;
     height: 100%;
     border-left: 15px solid rgba(0, 0, 0, 0);
@@ -34,7 +34,7 @@
 .tituloTop {
     text-align: center;
     text-justify: center;
-    color:#f2f68d;
+    color: #f2f68d;
     font-weight: 700;
     height: 100%;
 }
@@ -48,7 +48,7 @@ img {
     height: 50px;
 }
 
-.containerGeral{
+.containerGeral {
     justify-content: center;
     width: 100%;
     height: 100%;
@@ -58,7 +58,7 @@ img {
     border-bottom: 20px solid rgba(137, 43, 226, 0);
 }
 
- .titulo{
+.titulo {
     width: 75%;
     height: 50px;
     background-color: #f2f68d;
@@ -67,10 +67,10 @@ img {
     text-align: center;
 }
 
-.containerDev{
+.containerDev {
     background-color: black;
     width: 75%;
-    height: 500px;
+    height: fit-content !important;
     padding: 5.5%;
     margin-left: auto;
     margin-right: auto;
@@ -78,8 +78,8 @@ img {
     box-shadow: 0px -20px #f2f68d;
 }
 
-.input{
-    padding: 10px !important; 
+.input {
+    padding: 10px !important;
     width: 100% !important;
     min-width: 10% !important;
     height: 100% !important;
@@ -90,9 +90,9 @@ img {
 }
 
 .containerDev .textoInput {
-   text-align: center;
-   color: white;
-   font-weight: 400;
+    text-align: center;
+    color: white;
+    font-weight: 400;
 }
 
 .check {
@@ -110,7 +110,7 @@ img {
     margin-left: 20% !important;
 }
 
-.botaoConfirmar:hover{
+.botaoConfirmar:hover {
     justify-items: center;
     background-color: blueviolet !important;
     border-color: blueviolet !important;
@@ -128,7 +128,7 @@ img {
     margin-left: 40% !important;
 }
 
-.botaoRejeitar:hover{
+.botaoRejeitar:hover {
     background-color: #f2f68d !important;
     border-color: #f2f68d !important;
     border-radius: 100% !important;
@@ -136,12 +136,11 @@ img {
 }
 
 .form-check-input:checked {
-    background-color:  blueviolet !important;
+    background-color: blueviolet !important;
     border-color: #f2f68d !important;
 }
 
-.posBotoes
-{   
+.posBotoes {
     width: 100%;
     height: 100%;
     align-items: center;
@@ -151,6 +150,7 @@ img {
 .nav-link {
     border-bottom: 2px solid #f2f68d;
 }
+
 .nav-link:hover {
     border-bottom: 2.5px solid blueviolet;
 }
@@ -161,7 +161,7 @@ img {
     gap: 1px;
     margin-right: 50px;
     font-weight: 500;
-    
+
 }
 
 .dropdown-item:hover {
