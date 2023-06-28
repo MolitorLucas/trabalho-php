@@ -41,6 +41,7 @@
 
 .tituloTop:hover {
     color: blueviolet;
+
 }
 
 img {
@@ -168,5 +169,21 @@ img {
     background-color: blueviolet !important;
     font-weight: 600 !important;
     color: white !important;
+    
+}
+
+.botao{
+    background-color: blueviolet !important;
+    border-Radius: 10px 10px 0px 0px;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    font-weight: 700;
+    }
+
+.botao:hover{
+transform: scale(1.05);
+box-shadow:0px 0px 20px 10px blueviolet;
 
 }
+
