@@ -37,8 +37,8 @@ $publisher = $bll->selectId($id);
                         <input type="hidden" class="input form-control" id="idInput" name="idInput" value="<?php echo $id; ?>">
                     </div>
                     <div class="mb-3">
-                        <label for="descInput" class="textoInput form-label">Nome da Publisher:</label>
-                        <input type="text" class="input form-control" id="descInput" name="descInput" value="<?php echo $publisher->getNome() ?>">
+                        <label for="nomeInput" class="textoInput form-label">Nome da Publisher:</label>
+                        <input type="text" class="input form-control" id="nomeInput" name="nomeInput" value="<?php echo $publisher->getNome() ?>">
                     </div>
                     <div class="posBotoes">
                         <button type="submit" class="botaoConfirmar btn btn-primary">
