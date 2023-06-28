@@ -50,5 +50,16 @@
                 echo ($e->getMessage());
             }
         }
+
+
+    public function update(\MODEL\Publisher $publisher)
+    {
+        if ($publisher->getNome() != "") {
+            try {
+                $this->dal->update($publisher);
+            } catch (\Exception $e) {
+                echo ($e->getMessage());
+            }
+        }
     }
-?>
+    }

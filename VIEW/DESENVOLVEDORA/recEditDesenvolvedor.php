@@ -1,21 +1,20 @@
 <?php
-    include_once '../../MODEL/desenvolvedora.php';
-    include_once '../../BLL/bllDesenvolvedora.php';
+include_once '../../MODEL/desenvolvedora.php';
+include_once '../../BLL/bllDesenvolvedora.php';
 
-   $desenvolvedora = new \MODEL\Desenvolvedora(); 
-   
-   $desenvolvedora->setId($_POST['idInput']);
-   $desenvolvedora->setNome($_POST['nomeInput']);
-   $desenvolvedora->setOrigem($_POST['origemInput']);
+$desenvolvedora = new \MODEL\Desenvolvedora();
 
-   if ($_POST['indieCheckBox'] != NULL){
-   $desenvolvedora->setIndie($_POST['indieCheckBox']);
-    } 
-   else {$desenvolvedora->setIndie(false);}
+$desenvolvedora->setId($_POST['idInput']);
+$desenvolvedora->setNome($_POST['nomeInput']);
+$desenvolvedora->setOrigem($_POST['origemInput']);
 
-   $bll = new \BLL\bllDesenvolvedora(); 
-   $bll->Update($desenvolvedora); 
-   
-   header("location: lstdesenvolvedora.php");
-  
-?>
+if ($_POST['indieCheckBox'] != NULL) {
+    $desenvolvedora->setIndie($_POST['indieCheckBox']);
+} else {
+    $desenvolvedora->setIndie(false);
+}
+
+$bll = new \BLL\bllDesenvolvedora();
+$bll->Update($desenvolvedora);
+
+header("location: lstdesenvolvedora.php");
