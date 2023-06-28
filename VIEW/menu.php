@@ -79,10 +79,10 @@
 
             <div class="container text-center">
             <div class="row row-cols-2">
-            <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='DESENVOLVEDORA/insDesenvolvedora.php'">Lista De Desenvolvedores</button>
-            <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='PUBLISHER/insPublisher.php'">Lista de Publishers</button>
-            <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='JOGO/insJogo.php'">Lista de Jogos</button>
-            <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='GENERO/insGenero.php'">Lista de Generos</button>
+            <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='DESENVOLVEDORA/insDesenvolvedora.php'">Inserir Desenvolvedores</button>
+            <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='PUBLISHER/insPublisher.php'">Inserir Publishers</button>
+            <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='JOGO/insJogo.php'">Inserir Jogos</button>
+            <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='GENERO/insGenero.php'">Inserir Generos</button>
             </div>
             </div>
 
