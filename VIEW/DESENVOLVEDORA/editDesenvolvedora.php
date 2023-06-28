@@ -32,17 +32,23 @@ $desenvolvedora = $bll->selectId($id);
                 <h1>EDITAR: ID <?php echo $desenvolvedora->getId(); ?></h1>
             </div>
             <div class='containerDev'>
-                <form method="POST" action="recEditDesenvolvedor.php" id="formInsere">
+                <form method="POST" action="recEditDesenvolvedor.php" id="formInsere" class="needs-validation" novalidate>
                     <div class="mb-3">
                         <input type="hidden" class="input form-control" id="idInput" name="idInput" value="<?php echo $id; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="nomeInput" class="textoInput form-label">Nome Da Desenvolvedora:</label>
-                        <input type="text" class="input form-control" id="nomeInput" name="nomeInput" value="<?php echo $desenvolvedora->getNome() ?>">
+                        <input type="text" class="input form-control" id="nomeInput" name="nomeInput" required value="<?php echo $desenvolvedora->getNome() ?>">
+                        <div class="invalid-feedback">
+                            Digite um nome para a desenvolvedora
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="origemInput" class="textoInput form-label">País de Origem</label>
-                        <input type="text" class="input form-control" id="origemInput" name="origemInput" value="<?php echo $desenvolvedora->getOrigem() ?>">
+                        <input type="text" class="input form-control" id="origemInput" name="origemInput" required value="<?php echo $desenvolvedora->getOrigem() ?>">
+                        <div class="invalid-feedback">
+                            Digite um país de origem
+                        </div>
                     </div>
                     <div class="form-check mb-3 ml-3 form-switch">
                         <input class="form-check-input" type="checkbox" role="switch" id="indieCheckBox" name="indieCheckBox" <?php if ($desenvolvedora->isIndie()) {
@@ -66,7 +72,30 @@ $desenvolvedora = $bll->selectId($id);
 
     <?php include_once '../footer.php'; ?>
     </div>
+    <script>
+        'use strict'
 
+        var forms = document.querySelectorAll('.needs-validation')
+
+        Array.prototype.slice.call(forms)
+            .forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+
+        var origemInputElement = document.getElementById('origemInput');
+
+        function validaOrigem() {
+
+            origemInputElement.value = origemInputElement.value.replace(/\d/g, '');
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

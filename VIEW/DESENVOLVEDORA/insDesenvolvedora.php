@@ -23,17 +23,20 @@
                 <h1>INSERIR</h1>
             </div>
             <div class='containerDev'>
-                <form class='row g-3 needs-validation" novalidate' method="POST" action="recinsDesenvolvedor.php" id="formInsere">
+                <form class="needs-validation" novalidate method="POST" action="recinsDesenvolvedor.php" id="formInsere">
                     <div class="mb-3">
                         <label for="nomeInput" class="textoInput form-label">Nome Da Desenvolvedora</label>
                         <input type="text" class="input form-control" id="nomeInput" name="nomeInput" required>
-                        <div class="valid-tooltip">
-                            Looks good!
+                        <div class="invalid-feedback">
+                            Digite um nome para a desenvolvedora
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="origemInput" class="textoInput form-label">País de Origem</label>
-                        <input type="text" class="input form-control" id="origemInput" name="origemInput">
+                        <input type="text" oninput="JavaScript:validaOrigem()" class="input form-control" id="origemInput" name="origemInput" required minlength="3">
+                        <div class="invalid-feedback">
+                            Digite um país de origem
+                        </div>
                     </div>
                     <div class="form-check mb-3 ml-3 form-switch">
                         <input class="form-check-input" type="checkbox" role="switch" id="indieCheckBox" name="indieCheckBox">
@@ -51,18 +54,35 @@
                 </form>
             </div>
         </div>
-
-
-
-
-
+    </div>
     </div>
 
     <?php include_once '../footer.php'; ?>
-    </div>
+    <script>
+        'use strict'
 
+        var forms = document.querySelectorAll('.needs-validation')
+
+        Array.prototype.slice.call(forms)
+            .forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+
+        var origemInputElement = document.getElementById('origemInput');
+
+        function validaOrigem() {
+
+            origemInputElement.value = origemInputElement.value.replace(/\d/g, '');
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>
-
