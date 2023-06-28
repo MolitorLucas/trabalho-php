@@ -1,6 +1,6 @@
 <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="lstDesenvolvedora.php">
+        <a class="navbar-brand" href="..\menu.php">
             <link href=""><img src="../img/logoFinal.png"></link>
         </a>
     </div>
