@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <?php include_once '../navbar.php'; ?>
+    <?php include_once '../navbar2.php'; ?>
 
     <div class="pagina">
         <div class="containerGeral">
@@ -23,10 +23,13 @@
                 <h1>INSERIR</h1>
             </div>
             <div class='containerDev'>
-                <form method="POST" action="recinsDesenvolvedor.php" id="formInsere">
+                <form class='row g-3 needs-validation" novalidate' method="POST" action="recinsDesenvolvedor.php" id="formInsere">
                     <div class="mb-3">
                         <label for="nomeInput" class="textoInput form-label">Nome Da Desenvolvedora</label>
-                        <input type="text" class="input form-control" id="nomeInput" name="nomeInput">
+                        <input type="text" class="input form-control" id="nomeInput" name="nomeInput" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="origemInput" class="textoInput form-label">País de Origem</label>
@@ -62,3 +65,4 @@
 </body>
 
 </html>
+

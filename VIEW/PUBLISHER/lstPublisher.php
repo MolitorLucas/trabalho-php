@@ -50,7 +50,7 @@ $lstPublisher = $bll->select();
 
 <body>
 
-    <?php include_once '../navbar.php'; ?>
+    <?php include_once '../navbar2.php'; ?>
 
     <div class='pagina'>
         <div class="containerGeral">

@@ -14,15 +14,16 @@
             
             $lstReader = $con->query($sql);
             $con = Conexao::close();
+            $lstGenero = [];
             foreach($lstReader as $reader){
                 $genero = new \MODEL\Genero();
 
                 $genero->setId($reader['id']);
                 $genero->setDescricao($reader['descricao']);
-                $lstDesenvovedora[] = $genero;
+                $lstGenero[] = $genero;
             }
 
-            return $lstDesenvovedora;
+            return $lstGenero;
         }
 
         public function selectID(int $id){

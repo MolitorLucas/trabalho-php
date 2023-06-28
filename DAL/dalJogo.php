@@ -20,6 +20,7 @@ class DalJogo
 
         $lstReader = $con->query($sql);
         $con = Conexao::close();
+        $lstJogo = [];
         foreach ($lstReader as $reader) {
             $jogo = new \MODEL\Jogo();
 
@@ -33,10 +34,10 @@ class DalJogo
             $dalPublisher = new \DAL\DalPublisher();
             $jogo->setPublisher($dalPublisher->selectID($reader['publisherID']));
 
-            $lstDesenvovedora[] = $jogo;
+            $lstJogo[] = $jogo;
         }
 
-        return $lstDesenvovedora;
+        return $lstJogo;
     }
 
     public function selectID(int $id)

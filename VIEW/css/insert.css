@@ -173,9 +173,9 @@ img {
     
 }
 
-.botao{
+.botao {
     background-color: blueviolet !important;
-    border-Radius: 10px 10px 0px 0px;
+    border-Radius: 10px 10px 0px 0px !important;
     width: 100%;
     align-items: center;
     justify-items: center;
@@ -185,5 +185,26 @@ img {
 .botao:hover{
 transform: scale(1.05);
 box-shadow:0px 0px 20px 10px blueviolet;
+}
+
+.botaoMenu{
+
+    background-color: blueviolet !important;
+    border-Radius: 10px 0px 10x 0px !important;
+    width: 20% !important;
+    align-items: center;
+    justify-items: center;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
 
 }
+
+.botaoMenu:hover{
+    transform: scale(1.05);
+    box-shadow:0px 0px 20px 10px #f2f68d;
+    }
+
