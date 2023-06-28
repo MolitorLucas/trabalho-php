@@ -1,5 +1,4 @@
 <?php
-echo __DIR__;
 
 use BLL\BllDesenvolvedora;
 
@@ -47,10 +46,12 @@ $lstDesenvolvedora = $bll->select();
                         <td class="text-center font-monospace"><?php echo $desenvolvedora->getOrigem(); ?></td>
                         <td class="text-center font-monospace"><?php echo ($desenvolvedora->isIndie() ? 'SIM' : 'NÃO'); ?></td>
                         <td class="text-center font-monospace">
-                            <button class="btn btn-sm btn-info"><iconify-icon icon="memory:diamond"></iconify-icon></button>
-                            <button class="btn btn-sm btn-primary"><iconify-icon icon="memory:pickaxe" onclick="JavaScript:location.href='editDesenvolvedora.php?id=' +
-                                     <?php echo $desenvolvedora->getId(); ?>"></iconify-icon></button>
-                            <button class="btn btn-sm btn-danger"><iconify-icon icon="memory:skull"></iconify-icon></button>
+                            <button class="btn btn-sm btn-info" onclick="JavaScript:location.href='detDesenvolvedora.php?id=' +
+                                     <?php echo $desenvolvedora->getId(); ?>"><iconify-icon icon="memory:diamond"></iconify-icon></button>
+                            <button class="btn btn-sm btn-primary" onclick="JavaScript:location.href='editDesenvolvedora.php?id=' +
+                                     <?php echo $desenvolvedora->getId(); ?>"><iconify-icon icon="memory:pickaxe" ></iconify-icon></button>
+                            <button class="btn btn-sm btn-danger" onclick="JavaScript:remover(<?php echo $desenvolvedora->getId(); ?>)
+                                     "><iconify-icon icon="memory:skull"></iconify-icon></button>
                         </td>
                     </tr>
                 <?php
@@ -60,7 +61,13 @@ $lstDesenvolvedora = $bll->select();
 
         </table>
     </div>
-
+    <script>
+    function remover(id) {
+        if (confirm('Excluir a Desenvolvedora ' + id + '?')) {
+            location.href = 'delDesenvolvedora.php?id=' + id;
+        }
+    }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>

@@ -14,7 +14,7 @@ $desenvolvedora = $bll->selectId($id);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDITAR</title>
+    <title>DETALHES</title>
 
     <link href="../css/insert.css" rel="stylesheet">
 
@@ -29,36 +29,27 @@ $desenvolvedora = $bll->selectId($id);
     <div class="pagina">
         <div class="containerGeral">
             <div class="titulo">
-                <h1>EDITAR: ID <?php echo $desenvolvedora->getId(); ?></h1>
+                <h1>DETALHE: ID <?php echo $desenvolvedora->getId(); ?></h1>
             </div>
             <div class='containerDev'>
                 <form method="POST" action="recEditDesenvolvedor.php" id="formInsere">
-                    <div class="mb-3">
-                        <input type="hidden" class="input form-control" id="idInput" name="idInput" value="<?php echo $id; ?>">
-                    </div>
+                   
                     <div class="mb-3">
                         <label for="nomeInput" class="textoInput form-label">Nome Da Desenvolvedora:</label>
-                        <input type="text" class="input form-control" id="nomeInput" name="nomeInput" value="<?php echo $desenvolvedora->getNome() ?>">
+                        <input readonly type="text" class="input form-control" id="nomeInput" name="nomeInput" value="<?php echo $desenvolvedora->getNome() ?>">
                     </div>
                     <div class="mb-3">
                         <label for="origemInput" class="textoInput form-label">País de Origem</label>
-                        <input type="text" class="input form-control" id="origemInput" name="origemInput" value="<?php echo $desenvolvedora->getOrigem() ?>">
+                        <input readonly type="text" class="input form-control" id="origemInput" name="origemInput" value="<?php echo $desenvolvedora->getOrigem() ?>">
                     </div>
                     <div class="form-check mb-3 ml-3 form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="indieCheckBox" name="indieCheckBox" <?php if ($desenvolvedora->isIndie()) {
+                        <input disabled class="form-check-input" type="checkbox" role="switch" id="indieCheckBox" name="indieCheckBox" <?php if ($desenvolvedora->isIndie()) {
                                                                                                                                     echo 'checked';
                                                                                                                                 } ?>>
                         <label class="check form-check-label" for="indieCheckBox">Sua desenvolvedora é Indie?</label>
                     </div>
 
-                    <div class="posBotoes">
-                        <button type="submit" class="botaoConfirmar btn btn-primary">
-                            <iconify-icon icon="memory:sword" style="color: white;" width="30" height="30"></iconify-icon>
-                        </button>
-                        <button type="reset" class="botaoRejeitar btn btn-primary">
-                            <iconify-icon icon="memory:remove-circle" style="color: black;" width="30" height="30"></iconify-icon>
-                        </button>
-                    </div>
+                    
                 </form>
             </div>
         </div>
