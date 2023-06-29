@@ -1,10 +1,17 @@
+<?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("location: index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INSERIR</title>
+    <title>MENU</title>
 
     <link href="css/insert.css" rel="stylesheet">
 
@@ -12,61 +19,61 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
     <style>
+        .containerGeral {
+            flex-direction: row !important;
+        }
 
-    .containerGeral{
-        flex-direction: row !important;
-    }
-    .soMuchTexto{
-        width: 50%px;
-        margin: 0 auto;
-        padding: 20px ;
-    }
-    .listas{
-       gap: 100px;
-        justify-items: center;
-        alig-items: center;
-        flex-direction: column;
-        background-color: red;
-        width: 900px;
-        height: 900px;
-    }
+        .soMuchTexto {
+            width: 50%px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-    .coluna{
-        width: 10rem;
-        height: 3rem;
-        padding: 10px;
-        background-color: blueviolet;
-        margin-top: 20px;
-        margin-right: auto;
-        margin-left: auto;
-        color: white;
-        font-weight: 700;
-        font-size: 16px !important;
-        border-radius: 10px;
-    }
+        .listas {
+            gap: 100px;
+            justify-items: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: red;
+            width: 900px;
+            height: 900px;
+        }
 
-    .pagina p{
-        width: 70%;
-        padding: 10px;
-        text-align:justify ;
-        text-justify: center;
-        color: black;
-        font-weight: 700;
-        font-size:16px;
-        margin-top: 10px;
-        margin-right: auto;
-        margin-left: auto;
-    }
+        .coluna {
+            width: 10rem;
+            height: 3rem;
+            padding: 10px;
+            background-color: blueviolet;
+            margin-top: 20px;
+            margin-right: auto;
+            margin-left: auto;
+            color: white;
+            font-weight: 700;
+            font-size: 16px !important;
+            border-radius: 10px;
+        }
 
-    .pagina h1 {
-        margin-top: 20px;
-        text-align: center ;
-        text-justify: center;
-        color: white;
-        font-size: 75px;
-        font-weight: 900;
-    }
+        .pagina p {
+            width: 70%;
+            padding: 10px;
+            text-align: justify;
+            text-justify: center;
+            color: black;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-right: auto;
+            margin-left: auto;
+        }
 
+        .pagina h1 {
+            margin-top: 20px;
+            text-align: center;
+            text-justify: center;
+            color: white;
+            font-size: 75px;
+            font-weight: 900;
+        }
     </style>
 
 </head>
@@ -78,12 +85,12 @@
         <div class="containerGeral row">
 
             <div class="container text-center">
-            <div class="row row-cols-2">
-            <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='DESENVOLVEDORA/insDesenvolvedora.php'">Inserir Desenvolvedores</button>
-            <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='PUBLISHER/insPublisher.php'">Inserir Publishers</button>
-            <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='JOGO/insJogo.php'">Inserir Jogos</button>
-            <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='GENERO/insGenero.php'">Inserir Generos</button>
-            </div>
+                <div class="row row-cols-2">
+                    <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='DESENVOLVEDORA/insDesenvolvedora.php'">Inserir Desenvolvedores</button>
+                    <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='PUBLISHER/insPublisher.php'">Inserir Publishers</button>
+                    <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='JOGO/insJogo.php'">Inserir Jogos</button>
+                    <button class='botaoMenu btn btn-sm btn-primary' onclick="JavaScript:location.href='GENERO/insGenero.php'">Inserir Generos</button>
+                </div>
             </div>
 
             <div class='soMuchTexo'>

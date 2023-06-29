@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("location: ../index.php");
+}
+?>
+<?php
 include_once '../../MODEL/genero.php';
 include_once '../../BLL/bllGenero.php';
 

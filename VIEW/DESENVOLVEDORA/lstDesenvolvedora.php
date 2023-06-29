@@ -1,11 +1,25 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("location: ../index.php");
+}
+?>
+<?php
 
 use BLL\BllDesenvolvedora;
 
 include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllDesenvolvedora.php';
 
 $bll = new BllDesenvolvedora();
-$lstDesenvolvedora = $bll->select();
+if (isset($_GET['busca']))
+    $busca = $_GET['busca'];
+else $busca = null;
+
+if ($busca == null)
+    $lstDesenvolvedora = $bll->select();
+else $lstDesenvolvedora = $bll->selectNome($busca);
+
+
 ?>
 
 
@@ -44,6 +58,10 @@ $lstDesenvolvedora = $bll->select();
             font-weight: 700;
             font-size: 16px;
         }
+
+        .bg {
+            background-color: #f2f68d !important;
+        }
     </style>
 
 </head>
@@ -57,9 +75,15 @@ $lstDesenvolvedora = $bll->select();
 
             <div class='containerDev'>
 
-                <button class='botao btn btn-sm btn-primary' onclick="JavaScript:location.href='insDesenvolvedora.php'">Inserir Desenvolvedora</button>
+                <button class='botao btn btn-sm btn-primary font-monospace' onclick="JavaScript:location.href='insDesenvolvedora.php'">Inserir Desenvolvedora</button>
 
-                <p class="h1 py-2 bg-warning font-monospace text-center">Listar Desenvolvedoras</p>
+                <p class="h1 py-2 bg font-monospace text-center">
+                    Listar Desenvolvedoras
+                    <input type="text" id="busca" class="input form-control" style="width:33% !important" value="<?php echo $busca ?>" placeholder="Busque uma desenvolvedora">
+                    <button class="btn btn-secondary btn-sm font-monospace" style="background-color: blueviolet !important;" onclick=" JavaScript:location.href=`lstDesenvolvedora.php?busca=${document.getElementById('busca').value}`;">
+                        <iconify-icon icon="pixelarticons:search" height="20"></iconify-icon> Buscar
+                    </button>
+                </p>
                 <table class="table table-dark table-stripped table-hover">
                     <thead>
                         <tr>

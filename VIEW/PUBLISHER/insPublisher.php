@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("location: ../index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -22,10 +29,13 @@
                 <h1>INSERIR</h1>
             </div>
             <div class='containerDev'>
-                <form method="POST" action="recinsPublisher.php" id="formInsere">
+                <form method="POST" action="recinsPublisher.php" id="formInsere" class="needs-validation" novalidate>
                     <div class="mb-3">
                         <label for="nomeInput" class="textoInput form-label">Nome Da Publisher</label>
-                        <input type="nome" class="input form-control" id="nomeInput" name="nomeInput">
+                        <input type="nome" class="input form-control" id="nomeInput" name="nomeInput" required>
+                        <div class="invalid-feedback">
+                            Digite um nome para a Publisher
+                        </div>
                     </div>
                     <div class="posBotoes">
                         <button type="submit" class="botaoConfirmar btn btn-primary">
@@ -38,14 +48,31 @@
                 </form>
             </div>
         </div>
-
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
     </div>
 
     <?php include_once '../footer.php'; ?>
+
+
+    <script>
+        'use strict'
+
+        var forms = document.querySelectorAll('.needs-validation')
+
+        Array.prototype.slice.call(forms)
+            .forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

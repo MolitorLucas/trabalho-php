@@ -1,11 +1,22 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("location: ../index.php");
+}
 
 use BLL\bllPublisher;
 
 include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllPublisher.php';
 
 $bll = new \BLL\bllPublisher();
-$lstPublisher = $bll->select();
+if (isset($_GET['busca']))
+    $busca = $_GET['busca'];
+else $busca = null;
+
+if ($busca == null)
+    $lstPublisher = $bll->select();
+else
+    $lstPublisher = $bll->selectNome($busca);
 ?>
 
 
@@ -44,6 +55,10 @@ $lstPublisher = $bll->select();
             font-weight: 700;
             font-size: 16px;
         }
+
+        .bg {
+            background-color: #f2f68d !important;
+        }
     </style>
 
 </head>
@@ -59,7 +74,13 @@ $lstPublisher = $bll->select();
 
                 <button class='botao btn btn-sm btn-primary' onclick="JavaScript:location.href='insPublisher.php'">Inserir Publisher</button>
 
-                <p class="h1 py-2 bg-warning font-monospace text-center">Listar Publishers</p>
+                <p class="h1 py-2 bg font-monospace text-center">
+                    Listar Publishers
+                    <input type="text" id="busca" class="input form-control" style="width:33% !important" value="<?php echo $busca ?>" placeholder="Busque uma publisher">
+                    <button class="btn btn-secondary btn-sm font-monospace" style="background-color: blueviolet !important;" onclick="JavaScript:location.href=`lstPublisher.php?busca=${document.getElementById('busca').value}`;">
+                        <iconify-icon icon="pixelarticons:search" height="20"></iconify-icon> Buscar
+                    </button>
+                </p>
                 <table class="table table-dark table-stripped table-hover">
                     <thead>
                         <tr>

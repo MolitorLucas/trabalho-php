@@ -1,11 +1,24 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("location: ../index.php");
+}
+?>
+<?php
 
 use BLL\bllJogo;
 
 include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllJogo.php';
 
 $bll = new \BLL\bllJogo();
-$lstJogo = $bll->select();
+if (isset($_GET['busca']))
+    $busca = $_GET['busca'];
+else $busca = null;
+
+if ($busca == null)
+    $lstJogo = $bll->select();
+else
+    $lstJogo = $bll->selectNome($busca);
 ?>
 
 
@@ -44,6 +57,10 @@ $lstJogo = $bll->select();
             font-weight: 700;
             font-size: 16px;
         }
+
+        .bg {
+            background-color: #f2f68d !important;
+        }
     </style>
 
 </head>
@@ -59,7 +76,13 @@ $lstJogo = $bll->select();
 
                 <button class='botao btn btn-sm btn-primary' onclick="JavaScript:location.href='insJogo.php'">Inserir Jogo</button>
 
-                <p class="h1 py-2 bg-warning font-monospace text-center">Listar Jogos</p>
+                <p class="h1 py-2 bg font-monospace text-center">
+                    Listar Jogos
+                    <input type="text" id="busca" class="input form-control" style="width:33% !important" value="<?php echo $busca ?>" placeholder="Busque um jogo">
+                    <button class="btn btn-secondary btn-sm font-monospace" style="background-color: blueviolet !important;" onclick="JavaScript:location.href=`lstJogo.php?busca=${document.getElementById('busca').value}`;">
+                        <iconify-icon icon="pixelarticons:search" height="20"></iconify-icon> Buscar
+                    </button>
+                </p>
                 <table class="table table-dark table-stripped table-hover">
                     <thead>
                         <tr>

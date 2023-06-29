@@ -35,6 +35,17 @@ class BllDesenvolvedora
         }
     }
 
+    public function selectNome(string $nome)
+    {
+        try {
+            $desenvolvedora = $this->dal->selectNome($nome);
+            return $desenvolvedora;
+        } catch (\Exception $e) {
+            echo ($e->getMessage());
+        }
+    }
+
+
     public function insert(\MODEL\Desenvolvedora $desenvolvedora)
     {
         if ($desenvolvedora->getNome() != "" && $desenvolvedora->getOrigem() != "") {

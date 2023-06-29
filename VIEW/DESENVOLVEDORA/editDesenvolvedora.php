@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("location: ../index.php");
+}
+?>
+<?php
 include_once 'C:\xampp\htdocs\trabalho-php\BLL\blldesenvolvedora.php';
 $id = $_GET['id'];
 

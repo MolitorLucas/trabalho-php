@@ -1,11 +1,23 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("location: ../index.php");
+}
+?>
+<?php
 
 use BLL\BllGenero;
 
 include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllGenero.php';
 
 $bll = new \BLL\BllGenero();
-$lstGenero = $bll->select();
+if (isset($_GET['busca']))
+    $busca = $_GET['busca'];
+else $busca = null;
+
+if ($busca == null)
+    $lstGenero = $bll->select();
+else $lstGenero = $bll->selectNome($busca);
 ?>
 
 
@@ -44,6 +56,10 @@ $lstGenero = $bll->select();
             font-weight: 700;
             font-size: 16px;
         }
+
+        .bg {
+            background-color: #f2f68d !important;
+        }
     </style>
 
 </head>
@@ -59,7 +75,13 @@ $lstGenero = $bll->select();
 
                 <button class='botao btn btn-sm btn-primary' onclick="JavaScript:location.href='insGenero.php'">Inserir Gênero</button>
 
-                <p class="h1 py-2 bg-warning font-monospace text-center">Listar Gêneros</p>
+                <p class="h1 py-2 bg font-monospace text-center">
+                    Listar Gêneros
+                    <input type="text" id="busca" class="input form-control" style="width:33% !important" placeholder="Busque um gênero" value="<?php echo $busca?>">
+                    <button class="btn btn-secondary btn-sm font-monospace" style="background-color: blueviolet !important;" onclick="JavaScript:location.href=`lstGenero.php?busca=${document.getElementById('busca').value}`;">
+                        <iconify-icon icon="pixelarticons:search" height="20"></iconify-icon> Buscar
+                    </button>
+                </p>
                 <table class="table table-dark table-stripped table-hover">
                     <thead>
                         <tr>

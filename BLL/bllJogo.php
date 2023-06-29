@@ -34,6 +34,15 @@ class BllJogo
             echo ($e->getMessage());
         }
     }
+    public function selectNome(string $nome)
+    {
+        try {
+            $jogo = $this->dal->selectNome($nome);
+            return $jogo;
+        } catch (\Exception $e) {
+            echo ($e->getMessage());
+        }
+    }
 
     public function insert(\MODEL\Jogo $jogo)
     {

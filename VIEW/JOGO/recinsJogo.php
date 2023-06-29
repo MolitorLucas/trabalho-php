@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("location: ../index.php");
+}
+?>
+<?php
 include_once '../../MODEL/jogo.php';
 include_once '../../BLL/bllJogo.php';
 include_once '../../BLL/bllDesenvolvedora.php';
@@ -26,4 +32,4 @@ $jogo->setPublisher($pubSelecionada);
 $bll = new \BLL\BllJogo();
 $bll->insert($jogo);
 
-header("location: lstjogo.php");
+header("location: lstJogo.php");

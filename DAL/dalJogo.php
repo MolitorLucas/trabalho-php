@@ -62,6 +62,31 @@ class DalJogo
         $jogo->setPublisher($dalPublisher->selectID($reader['publisherID']));
         return $jogo;
     }
+    public function selectNome(string $nome)
+    {
+        $sql = "SELECT * FROM jogo WHERE nome LIKE '%" . $nome . "%' ORDER BY nome ASC;";
+        $con = Conexao::open();
+        $lstReader = $con->query($sql);
+        $con = Conexao::close();
+        $lstJogo = [];
+        foreach ($lstReader as $reader) {
+            $jogo = new \MODEL\Jogo();
+
+            $jogo->setId($reader['id']);
+            $jogo->setNome($reader['nome']);
+            $jogo->setPreco($reader['preco']);
+            $dalGenero = new \DAL\DalGenero();
+            $jogo->setGenero($dalGenero->selectID($reader['generoID']));
+            $dalDesenvolvedora = new \DAL\DalDesenvolvedora();
+            $jogo->setDesenvolvedora($dalDesenvolvedora->selectID($reader['desenvolvedoraID']));
+            $dalPublisher = new \DAL\DalPublisher();
+            $jogo->setPublisher($dalPublisher->selectID($reader['publisherID']));
+
+            $lstJogo[] = $jogo;
+        }
+
+        return $lstJogo;
+    }
 
     public function insert(\MODEL\Jogo $jogo)
     {

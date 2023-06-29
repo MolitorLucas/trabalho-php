@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("location: ../index.php");
+}
+?>
+<?php
 include_once 'C:\xampp\htdocs\trabalho-php\BLL\blldesenvolvedora.php';
 $id = $_GET['id'];
 
@@ -33,7 +39,7 @@ $desenvolvedora = $bll->selectId($id);
             </div>
             <div class='containerDev'>
                 <form method="POST" action="recEditDesenvolvedor.php" id="formInsere">
-                   
+
                     <div class="mb-3">
                         <label for="nomeInput" class="textoInput form-label">Nome Da Desenvolvedora:</label>
                         <input readonly type="text" class="input form-control" id="nomeInput" name="nomeInput" value="<?php echo $desenvolvedora->getNome() ?>">
@@ -44,12 +50,12 @@ $desenvolvedora = $bll->selectId($id);
                     </div>
                     <div class="form-check mb-3 ml-3 form-switch">
                         <input disabled class="form-check-input" type="checkbox" role="switch" id="indieCheckBox" name="indieCheckBox" <?php if ($desenvolvedora->isIndie()) {
-                                                                                                                                    echo 'checked';
-                                                                                                                                } ?>>
+                                                                                                                                            echo 'checked';
+                                                                                                                                        } ?>>
                         <label class="check form-check-label" for="indieCheckBox">Sua desenvolvedora é Indie?</label>
                     </div>
 
-                    
+
                 </form>
             </div>
         </div>

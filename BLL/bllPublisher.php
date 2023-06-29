@@ -34,6 +34,15 @@ class BllPublisher
             echo ($e->getMessage());
         }
     }
+    public function selectNome(string $nome)
+    {
+        try {
+            $publisher = $this->dal->selectNome($nome);
+            return $publisher;
+        } catch (\Exception $e) {
+            echo ($e->getMessage());
+        }
+    }
 
     public function insert(\MODEL\Publisher $publisher)
     {

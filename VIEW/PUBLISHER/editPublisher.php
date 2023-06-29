@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("location: ../index.php");
+}
 include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllPublisher.php';
 $id = $_GET['id'];
 
@@ -32,13 +36,16 @@ $publisher = $bll->selectId($id);
                 <h1>EDITAR: ID <?php echo $publisher->getId(); ?></h1>
             </div>
             <div class='containerDev'>
-                <form method="POST" action="recEditpublisher.php" id="formInsere">
+                <form method="POST" action="recEditpublisher.php" id="formInsere" class="needs-validation" novalidate>
                     <div class="mb-3">
                         <input type="hidden" class="input form-control" id="idInput" name="idInput" value="<?php echo $id; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="nomeInput" class="textoInput form-label">Nome da Publisher:</label>
-                        <input type="text" class="input form-control" id="nomeInput" name="nomeInput" value="<?php echo $publisher->getNome() ?>">
+                        <input type="text" class="input form-control" id="nomeInput" name="nomeInput" required value="<?php echo $publisher->getNome() ?>">
+                        <div class="invalid-feedback">
+                            Digite um nome para a Publisher
+                        </div>
                     </div>
                     <div class="posBotoes">
                         <button type="submit" class="botaoConfirmar btn btn-primary">

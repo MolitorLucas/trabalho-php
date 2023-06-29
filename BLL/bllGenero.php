@@ -35,6 +35,16 @@ class BllGenero
         }
     }
 
+    public function selectNome(string $nome)
+    {
+        try {
+            $genero = $this->dal->selectNome($nome);
+            return $genero;
+        } catch (\Exception $e) {
+            echo ($e->getMessage());
+        }
+    }
+
     public function insert(\MODEL\Genero $genero)
     {
         if ($genero->getDescricao() != "") {

@@ -1,32 +1,38 @@
 <?php
-    namespace DAL;
 
-    use \MODEL\Usuario;
+namespace DAL;
 
-    include_once 'C:\xampp\htdocs\trabalho-php\MODEL\usuario.php';
-    include_once 'conexao.php';
+use \MODEL\Usuario;
 
-    class DalUsuario {
+include_once 'C:\xampp\htdocs\trabalho-php\MODEL\usuario.php';
+include_once 'conexao.php';
 
-        public function selectUser(string $usuario){
-                
-            $sql = "select * from usuario where usuario LIKE ?;";
-            $pdo = Conexao::open();
-            $query = $pdo->prepare($sql);
-            $query->execute(array($usuario));
-            $linha = $query->fetch(\PDO::FETCH_ASSOC);
-            Conexao::close();
+class DalUsuario
+{
 
-            $usuario = new \MODEL\Usuario();
+    public function selectUser(string $usuario)
+    {
 
-            if ($linha != null) {
-                $usuario->setId($linha['id']);
-                $usuario->setUsuario($linha['usuario']);
-                $usuario->setSenha($linha['senha']);
-            }
+        $sql = "select * from usuario where usuario LIKE ?;";
+        $pdo = Conexao::open();
+        $query = $pdo->prepare($sql);
+        $query->execute(array($usuario));
+        $linha = $query->fetch(\PDO::FETCH_ASSOC);
+        Conexao::close();
+        $usuario = new \MODEL\Usuario();
+
+
+        if ($linha) {
+            $usuario->setId($linha['id']);
+            $usuario->setUsuario($linha['usuario']);
+            $usuario->setSenha($linha['senha']);
 
             return $usuario;
-            }
-    }
+        }
+        $usuario->setId(0);
+        $usuario->setUsuario('');
+        $usuario->setSenha('');
 
-?>
+        return $usuario;
+    }
+}
