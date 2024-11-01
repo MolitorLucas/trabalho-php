@@ -16,4 +16,4 @@ $genero->setDescricao($_POST['descInput']);
 $bll = new \BLL\bllGenero();
 $bll->update($genero);
 
-header("location: lstgenero.php");
+header("location: lstGenero.php");

@@ -23,4 +23,4 @@ if ($_POST['indieCheckBox'] != NULL) {
 $bll = new \BLL\bllDesenvolvedora();
 $bll->Update($desenvolvedora);
 
-header("location: lstdesenvolvedora.php");
+header("location: lstDesenvolvedora.php");
