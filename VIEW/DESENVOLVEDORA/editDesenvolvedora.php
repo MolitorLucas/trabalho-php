@@ -5,10 +5,10 @@ if (!isset($_SESSION['login'])) {
 }
 ?>
 <?php
-include_once 'C:\xampp\htdocs\trabalho-php\BLL\blldesenvolvedora.php';
+include_once '/var/www/html/trabalho-php/BLL/blldesenvolvedora.php';
 $id = $_GET['id'];
 
-$bll = new  \BLL\bllDesenvolvedora();
+$bll = new  \BLL/bllDesenvolvedora();
 $desenvolvedora = $bll->selectId($id);
 
 ?>

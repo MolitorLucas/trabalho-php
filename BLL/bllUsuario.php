@@ -4,7 +4,7 @@ namespace BLL;
 
 use DAL\DalUsuario;
 
-include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalUsuario.php';
+include_once '/var/www/html/trabalho-php/DAL/dalUsuario.php';
 
 class BllUsuario
 {

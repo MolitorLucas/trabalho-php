@@ -4,7 +4,7 @@ namespace DAL;
 
 use \MODEL\Usuario;
 
-include_once 'C:\xampp\htdocs\trabalho-php\MODEL\usuario.php';
+include_once '/var/www/html/trabalho-php/MODEL/usuario.php';
 include_once 'conexao.php';
 
 class DalUsuario

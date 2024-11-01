@@ -4,7 +4,7 @@ namespace BLL;
 
 use \DAL\DalGenero;
 
-include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalGenero.php';
+include_once '/var/www/html/trabalho-php/DAL/dalGenero.php';
 
 class BllGenero
 {

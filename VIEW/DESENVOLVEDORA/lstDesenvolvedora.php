@@ -8,7 +8,7 @@ if (!isset($_SESSION['login'])) {
 
 use BLL\BllDesenvolvedora;
 
-include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllDesenvolvedora.php';
+include_once '/var/www/html/trabalho-php/BLL/bllDesenvolvedora.php';
 
 $bll = new BllDesenvolvedora();
 if (isset($_GET['busca']))

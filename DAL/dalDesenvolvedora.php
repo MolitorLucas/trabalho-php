@@ -5,7 +5,7 @@ namespace DAL;
 use \MODEL\Desenvolvedora;
 
 include_once 'conexao.php';
-include_once 'C:\xampp\htdocs\trabalho-php\MODEL\desenvolvedora.php';
+include_once '/var/www/html/trabalho-php/MODEL/desenvolvedora.php';
 
 class DalDesenvolvedora
 {

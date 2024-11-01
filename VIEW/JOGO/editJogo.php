@@ -5,7 +5,7 @@ if (!isset($_SESSION['login'])) {
 }
 ?>
 <?php
-include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllJogo.php';
+include_once '/var/www/html/trabalho-php/BLL/bllJogo.php';
 
 include_once '../../BLL/bllDesenvolvedora.php';
 
@@ -14,7 +14,7 @@ include_once '../../BLL/bllGenero.php';
 include_once '../../BLL/bllPublisher.php';
 $id = $_GET['id'];
 
-$bll = new  \BLL\bllJogo();
+$bll = new  \BLL/bllJogo();
 $jogo = $bll->selectId($id);
 
 

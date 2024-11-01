@@ -5,7 +5,7 @@ namespace DAL;
 use \MODEL\Publisher;
 
 include_once 'conexao.php';
-include_once 'C:\xampp\htdocs\trabalho-php\MODEL\publisher.php';
+include_once '/var/www/html/trabalho-php/MODEL/publisher.php';
 
 class DalPublisher
 {

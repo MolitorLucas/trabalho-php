@@ -5,7 +5,7 @@ namespace DAL;
 use \MODEL\Jogo;
 
 include_once 'conexao.php';
-include_once 'C:\xampp\htdocs\trabalho-php\MODEL\jogo.php';
+include_once '/var/www/html/trabalho-php/MODEL/jogo.php';
 include_once 'dalDesenvolvedora.php';
 include_once 'dalGenero.php';
 include_once 'dalPublisher.php';

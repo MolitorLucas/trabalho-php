@@ -5,7 +5,7 @@ namespace DAL;
 use \MODEL\Genero;
 
 include_once 'conexao.php';
-include_once 'C:\xampp\htdocs\trabalho-php\MODEL\genero.php';
+include_once '/var/www/html/trabalho-php/MODEL/genero.php';
 
 class DalGenero
 {

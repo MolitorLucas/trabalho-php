@@ -4,11 +4,11 @@ if (!isset($_SESSION['login'])) {
     header("location: ../index.php");
 }
 
-use BLL\bllPublisher;
+use BLL/bllPublisher;
 
-include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllPublisher.php';
+include_once '/var/www/html/trabalho-php/BLL/bllPublisher.php';
 
-$bll = new \BLL\bllPublisher();
+$bll = new \BLL/bllPublisher();
 if (isset($_GET['busca']))
     $busca = $_GET['busca'];
 else $busca = null;

@@ -4,7 +4,7 @@ namespace BLL;
 
 use \DAL\DalJogo;
 
-include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalJogo.php';
+include_once '/var/www/html/trabalho-php/DAL/dalJogo.php';
 
 class BllJogo
 {

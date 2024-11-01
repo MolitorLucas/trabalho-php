@@ -8,7 +8,7 @@ if (!isset($_SESSION['login'])) {
 
 use BLL\BllGenero;
 
-include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllGenero.php';
+include_once '/var/www/html/trabalho-php/BLL/bllGenero.php';
 
 $bll = new \BLL\BllGenero();
 if (isset($_GET['busca']))

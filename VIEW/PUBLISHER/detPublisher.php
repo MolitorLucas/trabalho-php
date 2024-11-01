@@ -5,10 +5,10 @@ if (!isset($_SESSION['login'])) {
 }
 ?>
 <?php
-include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllPublisher.php';
+include_once '/var/www/html/trabalho-php/BLL/bllPublisher.php';
 $id = $_GET['id'];
 
-$bll = new  \BLL\bllPublisher();
+$bll = new  \BLL/bllPublisher();
 $publisher = $bll->selectId($id);
 
 ?>

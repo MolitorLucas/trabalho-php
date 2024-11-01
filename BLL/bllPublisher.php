@@ -4,7 +4,7 @@ namespace BLL;
 
 use \DAL\DalPublisher;
 
-include_once 'C:\xampp\htdocs\trabalho-php\DAL\dalPublisher.php';
+include_once '/var/www/html/trabalho-php/DAL/dalPublisher.php';
 
 class BllPublisher
 {

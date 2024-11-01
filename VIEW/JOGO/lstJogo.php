@@ -6,11 +6,11 @@ if (!isset($_SESSION['login'])) {
 ?>
 <?php
 
-use BLL\bllJogo;
+use BLL/bllJogo;
 
-include_once 'C:\xampp\htdocs\trabalho-php\BLL\bllJogo.php';
+include_once '/var/www/html/trabalho-php/BLL/bllJogo.php';
 
-$bll = new \BLL\bllJogo();
+$bll = new \BLL/bllJogo();
 if (isset($_GET['busca']))
     $busca = $_GET['busca'];
 else $busca = null;
