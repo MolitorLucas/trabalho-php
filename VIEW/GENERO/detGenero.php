@@ -8,7 +8,7 @@ if (!isset($_SESSION['login'])) {
 include_once '/var/www/html/trabalho-php/BLL/bllGenero.php';
 $id = $_GET['id'];
 
-$bll = new  \BLL/bllGenero();
+$bll = new  \BLL\bllGenero();
 $genero = $bll->selectId($id);
 
 ?>

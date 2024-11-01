@@ -6,7 +6,7 @@ if (!isset($_SESSION['login'])) {
 include_once '/var/www/html/trabalho-php/BLL/bllPublisher.php';
 $id = $_GET['id'];
 
-$bll = new  \BLL/bllPublisher();
+$bll = new  \BLL\bllPublisher();
 $publisher = $bll->selectId($id);
 
 ?>

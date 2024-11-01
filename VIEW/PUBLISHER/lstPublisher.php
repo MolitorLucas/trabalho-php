@@ -8,7 +8,7 @@ use BLL/bllPublisher;
 
 include_once '/var/www/html/trabalho-php/BLL/bllPublisher.php';
 
-$bll = new \BLL/bllPublisher();
+$bll = new \BLL\bllPublisher();
 if (isset($_GET['busca']))
     $busca = $_GET['busca'];
 else $busca = null;

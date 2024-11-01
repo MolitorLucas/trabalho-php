@@ -14,7 +14,7 @@ include_once '../../BLL/bllGenero.php';
 include_once '../../BLL/bllPublisher.php';
 $id = $_GET['id'];
 
-$bll = new  \BLL/bllJogo();
+$bll = new  \BLL\bllJogo();
 $jogo = $bll->selectId($id);
 
 

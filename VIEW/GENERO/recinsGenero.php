@@ -12,7 +12,7 @@ $genero = new \MODEL\Genero();
 
 $genero->setDescricao($_POST['descInput']);
 
-$bll = new \BLL/bllGenero();
+$bll = new \BLL\bllGenero();
 $bll->insert($genero);
 
 header("location: lstGenero.php");
