@@ -13,6 +13,6 @@ $genero = new \MODEL\Genero();
 $genero->setDescricao($_POST['descInput']);
 
 $bll = new \BLL/bllGenero();
-$bll->Insert($genero);
+$bll->insert($genero);
 
 header("location: lstGenero.php");

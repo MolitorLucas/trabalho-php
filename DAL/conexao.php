@@ -6,8 +6,8 @@ use PDO;
 class Conexao{
     private static $dbNome='realoficial'; 
     private static $dbHost = 'localhost';
-    private static $dbUsuario = 'root'; 
-    private static $dbSenha = '';  
+    private static $dbUsuario = 'user'; 
+    private static $dbSenha = '123';  
 
     private static $cont = null; 
 

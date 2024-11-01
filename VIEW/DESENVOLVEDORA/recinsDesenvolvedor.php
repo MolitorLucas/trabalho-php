@@ -20,6 +20,6 @@ if ($_POST['indieCheckBox'] != NULL) {
 }
 
 $bll = new \BLL/bllDesenvolvedora();
-$bll->Insert($desenvolvedora);
+$bll->insert($desenvolvedora);
 
 header("location: lstDesenvolvedora.php");
